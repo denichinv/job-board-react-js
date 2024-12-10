@@ -23,7 +23,7 @@ const JobBoard = () => {
   };
 
   return (
-    <div>
+    <div id="container">
       <h1>{companyName}</h1>
       <p>{getJobMessage()}</p>
       <button
