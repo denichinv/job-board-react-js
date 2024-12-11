@@ -1,6 +1,7 @@
 
 import './App.css'
 import JobBoard from './JobBoard'
+import DynamicInput from './dynamicInputForm'
 
 function App() {
 
@@ -8,6 +9,7 @@ function App() {
   return (
     <>
     <JobBoard/>
+    <DynamicInput/>
     </>
   )
 }
