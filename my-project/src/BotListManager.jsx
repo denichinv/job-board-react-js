@@ -47,7 +47,7 @@ const BotListManager = () => {
         id: bots.length > 0 ? Math.max(...bots.map(b => b.id)) + 1 : 1,
         name: newBot.name,
         task: newBot.task,
-        status: "Stopped"
+        status: ""
       };
 
       // Add the new bot to the existing list
@@ -78,6 +78,13 @@ const BotListManager = () => {
       )
     );
   };
+
+  //delete a specific bot from list 
+
+  const deleteBot = (id) => {
+    setBots((currentBots) => 
+    currentBots.filter((bot) => bot.id !== id))
+  }
 
   // Render the component
   return (
@@ -113,7 +120,7 @@ const BotListManager = () => {
         {bots.map(({ id, name, status, task }) => (
           <li key={id}>
             <span>
-              {id}. {name} - {task} <br /> <b>{status}</b>
+               {name} - {task} <br /> <b>{status}</b>
             </span>
             <button
               style={{color:"red"}}
@@ -126,6 +133,11 @@ const BotListManager = () => {
               onClick={() => stopJob(id)}
             >
               Stop
+            </button>
+            <button
+              style={{color:"red"}}
+              onClick={() => deleteBot(id)}
+            >Delete Operation
             </button>
           </li>
         ))}

@@ -15,7 +15,7 @@ const JobBoard = () => {
     }
     else {
       // Message showing number of running tasks
-      return `Tasks running today from bot: ${taskCount}`;
+      return `Tasks running today from bot:${taskCount}`;
     }
   };
 
