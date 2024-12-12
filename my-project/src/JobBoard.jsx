@@ -8,7 +8,8 @@ const JobBoard = () => {
   const getJobMessage = () => {
     if (taskCount === 0) {
       return "No tasks to schedule today!";
-    } else {
+    }
+    else {
       return `Tasks running today from bot: ${taskCount}`;
     }
   };
@@ -18,7 +19,12 @@ const JobBoard = () => {
   };
 
   const decrementTaskCount = () => {
-    setTaskCount(taskCount - 1);
+    setTaskCount(taskCount => {
+     const newCount = taskCount - 1 
+    
+        return newCount < 0 ? 0 : newCount
+      }
+    );
   };
 
   const resetTaskCount = () => {
