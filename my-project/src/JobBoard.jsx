@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 const JobBoard = () => {
-  const companyName = '"Task Handlers"';
+  const name = 'Task Handling:';
   const [taskCount, setTaskCount] = useState(Math.floor(Math.random() * 10));
 
 
@@ -30,7 +30,7 @@ const JobBoard = () => {
   return (
     <>
       <div className="container">
-        <h1>{companyName}</h1>
+        <h1>{name}</h1>
         <p>{getJobMessage()}</p>
         <button style={{ color: "red" }} onClick={incrementTaskCount}>
           Create task
