@@ -29,6 +29,10 @@ const BotListManager = () => {
     task: ""
   });
 
+
+  // state for the show/hide list 
+  const [show,setShow] = useState(false)
+
   // Handle input changes in the add bot form
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -117,7 +121,8 @@ const BotListManager = () => {
       
       {/* List of bots */}
       <ul>
-        {bots.map(({ id, name, status, task }) => (
+        <button style={{color:"red"}} onClick={() => setShow(!show)}>{show? "Hide List" : "Show List"}</button>
+        {show && bots.map(({ id, name, status, task }) => (
           <li key={id}>
             <span>
                {name} - {task} <br /> <b>{status}</b>
