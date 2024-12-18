@@ -83,3 +83,19 @@ input{
   padding: 5px;
   width:295px;
 }
+
+.completed{
+  background-color: lightgreen;
+  padding-top: 50px;
+  border: 1px solid whitesmoke;
+  border-radius: 20px;
+  margin:  20px;
+}
+
+.failed{
+  background-color: lightcoral;
+ padding: 20px;
+ border: 1px solid whitesmoke;
+margin:20px;
+ border-radius: 20px;
+}

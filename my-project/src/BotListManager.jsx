@@ -6,19 +6,19 @@ const BotListManager = () => {
     {
       id: 1,
       name: "Email Extractor",
-      status: "",
+      status: "Running..",
       task: "Extracting emails",
     },
     {
       id: 2,
       name: "Notification Sender",
-      status: "",
+      status: "Running..",
       task: "Sending notifications",
     },
     {
       id: 3,
       name: "Data Analyzer",
-      status: "",
+      status: "Running..",
       task: "Analyzing data"
     },
   ]);
@@ -51,7 +51,7 @@ const BotListManager = () => {
         id: bots.length > 0 ? Math.max(...bots.map(b => b.id)) + 1 : 1,
         name: newBot.name,
         task: newBot.task,
-        status: ""
+        status: "Running.."
       };
 
       // Add the new bot to the existing list
@@ -66,10 +66,10 @@ const BotListManager = () => {
   };
 
   // Run a specific bot by changing its status
-  const runJob = (id) => {
+  const completeJob = (id) => {
     setBots((currentBots) =>
       currentBots.map((bot) =>
-        bot.id === id ? { ...bot, status: "Running..." } : bot
+        bot.id === id ? { ...bot, status: "Completed!" } : bot
       )
     );
   };
@@ -93,7 +93,7 @@ const BotListManager = () => {
   // Render the component
   return (
     <div className="container">
-      <h1>Bot List Manager:</h1>
+      <h1>Add Task Manually:</h1>
       
       {/* Form to add new bots */}
       <div>
@@ -129,9 +129,9 @@ const BotListManager = () => {
             </span>
             <button
               style={{color:"red"}}
-              onClick={() => runJob(id)}
+              onClick={() => completeJob(id)}
             >
-              Run
+              Complete
             </button>
             <button
               style={{color:"red"}}
@@ -147,6 +147,20 @@ const BotListManager = () => {
           </li>
         ))}
       </ul>
+
+      <div className="completed">
+        <h1>COMPLETED TASKS:</h1>
+        <p>
+       
+        </p>
+      </div>
+
+      <div className="failed">
+      <h1>FAILED TASKS:</h1>
+        <p>
+       
+        </p>
+      </div>
     </div>
   );
 };
