@@ -92,22 +92,15 @@ input{
   margin:  20px;
   
 }
-.completed li{
-  list-style-type: none;
-  padding: 10px;
-  border: 1px solid whitesmoke;
-  border-radius: 10px;
-  margin: 10px;
-  background-color: #f9f9f9;
-}
 .failed{
   background-color: lightcoral;
- padding: 20px;
- border: 1px solid whitesmoke;
-margin:20px;
- border-radius: 20px;
+  padding: 20px;
+  border: 1px solid whitesmoke;
+  margin:20px;
+  border-radius: 20px;
 }
-.failed li{
+
+.completed li, .failed li{
   list-style-type: none;
   padding: 10px;
   border: 1px solid whitesmoke;
